@@ -1,0 +1,18 @@
+[{
+  "_id": "6303c991ee930060238562c4",
+  "userName": "tushar",
+  "password": "$2a$10$kaKmNvBZUoPETTXd4dNzw.G2i/nTHZUHsbzwcwzsVQTO69BVpmnWa",
+  "Number": 9112070538,
+  "email": "mactushar28@gmail.com",
+  "profile": "http://res.cloudinary.com/dv41n5thm/image/upload/v1661192592/user/rska6o1bd6isqtq0i0ul.png",
+  "role": "admin"
+  
+},{
+  "_id": "63044393822fb4c53f8bf5b9",
+  "userName": "machhi",
+  "password": "$2a$10$EyN9.4yP5MqGinS3ZJ.65OBbwpdyvvpJWoVQ5cYYvNywOzXyy7UvO",
+  "Number": 9096236677,
+  "email": "mactushar26@gmail.com",
+  "profile": "http://res.cloudinary.com/dv41n5thm/image/upload/v1661223826/user/tbllza0pu2fzfbiz1dms.png",
+  "role": "user"
+}]

@@ -1,0 +1,229 @@
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: Inter var,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-feature-settings: "cv02","cv03","cv04","cv11";
+    color-scheme: dark;
+    --scroll-mt: 9.875rem;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    color: rgb(148 163 184/var(--tw-text-opacity));
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    max-height: 24rem;
+    overflow: hidden;
+    padding-right: .5rem;
+
+    /html/body/div[1]/div[3]/div/div[2]/div/div[1]/div[1]
+
+
+    class="overflow-hidden lg:overflow-auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded dark:scrollbar-track:!bg-slate-500/[0.16] dark:scrollbar-thumb:!bg-slate-500/50 max-h-96 supports-scrollbars:pr-2 lg:max-h-96"
+
+    import { movidata } from "./navdata";
+import "./index.css";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
+import { GlobeIcon } from "@heroicons/react/solid";
+import { MenuAlt1Icon } from "@heroicons/react/outline";
+import { useState, useRef } from "react";
+
+const Carosul = () => {
+  const slref = useRef();
+  console.log(slref);
+
+  
+
+  const next = (dir) => {
+     const dis = slref.current.getBoundingClientRect().x
+     console.log(dis)
+     console.log(slref.current.getBoundingClientRect())
+
+    if (dir === "l") {
+     slref.current.style.transform = `translateX(${dis-248}px)`
+      console.log("df")
+    }
+    if (dir === "r") {
+      slref.current.style.transform = `translateX(${248+dis}px)`
+       console.log("df")
+     }
+    
+  };
+  
+
+  return (
+    <>
+      <div className="my-4">
+        <h1 className="text-slate-100">continue to watching</h1>
+        <div className="relative overflow-scroll">
+          <ChevronLeftIcon
+          onClick={()=>{ next("l")}}
+            className="w-14 h-full z-10 text-white absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#06202A] "
+          />
+
+          <div className={`flex gap-2 w-full ease-in duration-300 snap-x snap-mandatory `} ref={slref}>
+            {movidata.map((el, i) => {
+              return (
+                <div className={`shrink-0 w-60 h-36 bg-slate-200`} key={i}>
+                  
+                </div>
+              );
+            })}
+          </div>
+
+          <ChevronRightIcon onClick={()=>{ next("r")}} className="w-14 h-full text-slate-100 absolute right-0 top-0 bottom-0 bg-gradient-to-l from-[#06202A]"/>
+        </div>
+      </div>
+    </>
+  );
+};
+export default Carosul;
+<nav className="transition-all bg-black text-white md:flex p-4 md:bg-black">
+        <div className="w-full flex justify-between">
+          <div>
+          <img className="h-8 w-32 object-cover" src={netflix} alt="logo" />
+          <MenuAlt1Icon
+            className="w-5 h-5 md:hidden transition-all"
+            onClick={co}
+          />
+        
+
+        {
+          <ul className="md:flex items-center">
+            {navdata.map((el) => {
+              return (
+                <li
+                  key={el.id}
+                  className={
+                    open
+                      ? "block"
+                      : "transition duration-300 hidden md:block md:mx-4"
+                  }
+                >
+                  {el.name}
+                </li>
+              );
+            })}
+          </ul>
+        }
+        </div>
+        </div>
+        <div>
+          <SearchIcon className="text-white" />
+        </div>
+        
+      </nav>
+      <ul className="flex flex-col absolute items-center justify-start bg-black top-10 p-6 space-y-2 right-0 rounded-md ">
+              <li className=" flex items-center"> <span className="bg-slate-600 p-2 mx-2 rounded-full"><UserIcon className="w-5 h-5 " /></span> Setting </li>
+              <li className="flex items-center"><span className="bg-slate-600 p-2 mx-2 rounded-full"><CogIcon className="w-5 h-5 " /></span>profile</li>
+        
+            </ul>
+
+
+            import { movidata } from "./navdata";
+import {
+  AiOutlineLike,
+  AiOutlineDislike,
+  AiFillLike,
+  AiFillDislike,
+} from "react-icons/ai";
+import { BsPlayFill, BsInfoCircle, BsPlus } from "react-icons/bs";
+
+const MovieList = () => {
+  return (
+    <>
+      {movidata.map((el, i) => {
+        return (
+          <div
+            key={i}
+            className="overflow-x-hidden mb-5 group h-32 w-60 shrink-0 snap-start hover:w-80 hover:border-2 hover:border-slate-600/50 bg-black"
+          >
+            <img
+              src={el.img}
+              alt={el.moviename}
+              className="h-32 w-full object-cover "
+            />
+            <div className="hidden delay-1000 group-hover:block">
+              <div className="text-white flex">
+                <BsPlayFill />
+                <BsPlus />
+                <AiOutlineLike />
+                <AiOutlineDislike />
+              </div>
+              <div className="text-white">
+                <span>1 hr 20 min</span>
+                <span>16+</span>
+                <span>2014</span>
+              </div>
+              <div className="text-white ">
+                <span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing
+                  elitconsectetur adipisicing elitconsectetur adipisicing
+                  elitconsectetur adipisicing elit.elitconsectetur adipisicing
+                  elitconsectetur adipisicing
+                </span>
+              </div>
+              <div className="text-white">Action</div>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+export default MovieList;
+
+import { movidata } from "./navdata";
+import {
+  AiOutlineLike,
+  AiOutlineDislike,
+  AiFillLike,
+  AiFillDislike,
+} from "react-icons/ai";
+import { BsPlayFill, BsInfoCircle, BsPlus } from "react-icons/bs";
+import { useState } from "react";
+
+const MovieList = () => {
+ const[hover, setHover]  =useState(false)
+ 
+
+  return (
+    <>
+      {movidata.map((el, i) => {
+        return (
+          <div
+            key={i}
+           onMouseEnter={()=>{setHover(true)}}
+           onMouseLeave={()=>{setHover(false)}}
+           style={{left:hover && i* 240 }}
+            className=" group overflow-hidden h-max w-60 shrink-0 snap-start hover:z-10 bg-black hover:-top-24 hover:absolute hover:scale-125"
+          >
+            <img src={el.img} alt={el.moviename} className="w-full" />
+            <div className="hidden group-hover:block  ">
+              <div className="text-white flex">
+                <BsPlayFill />
+                <BsPlus />
+                <AiOutlineLike />
+                <AiOutlineDislike />
+              </div>
+              <div className="text-white">
+                <span>1 hr 20 min</span>
+                <span>16+</span>
+                <span>2014</span>
+              </div>
+              <div className="text-white ">
+                <span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing
+                  elitconsectetur adipisicing elitconsectetur adipisicing
+                  elitconsectetur adipisicing elit.elitconsectetur adipisicing
+                  elitconsectetur adipisicing
+                </span>
+              </div>
+              <div className="text-white">Action</div>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+export default MovieList;

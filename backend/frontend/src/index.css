@@ -1,0 +1,85 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+ 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+    ::-webkit-file-upload-button{
+         @apply bg-red-800 text-white
+    
+
+    }
+
+    .text-stroke{
+        text-shadow: 2px 2px 2px rgb(132, 27, 27)
+    }
+
+    .tooltip-1:before{
+
+        @apply content-[attr(data)] text-white absolute text-[13px] left-[-110px] bg-zinc-500 rounded-md p-1 hidden
+
+    }
+    .tooltip-1:hover::before{
+        @apply flex
+
+    }
+
+    
+
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    
+    font-family: 'Tajawal', sans-serif;
+
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body{
+    background:black;
+    
+}
+
+.label-1:checked ~.lab-1{ 
+   @apply bg-red-800
+}
+.label-2:checked ~.lab-2{ 
+    @apply bg-red-800
+ }
+
+ .label-1:checked ~.lab-1:before{ 
+    @apply bg-zinc-500
+ }
+
+ .label-2:checked ~.lab-2:before{ 
+    @apply bg-zinc-500
+ }
+
+
+.sib-1:hover ~ .sib-1{
+transform:translateX(266px)
+}
