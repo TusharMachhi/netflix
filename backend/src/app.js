@@ -34,11 +34,11 @@ import stu from './db/router/userRouter.js'
 import movie from './db/router/moviesRouter.js'
 
 
-
+console.log()
 
 app.use('/user',stu)
 app.use('/movies',movie)
-app.use(express.static(path.join(__dirname, '../../frontend/build')))
+app.use(express.static(path.join(__dirname, '../frontend/build')))
 app.get("*",(req,res)=>{
   res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
 })
