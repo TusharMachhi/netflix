@@ -11,6 +11,13 @@ https://tusharnetflix.herokuapp.com/
 
 ## Screenshots
 
+![App Screenshot](https://github.com/TusharMachhi/netflix/blob/master/backend/src/screenshots/login.png?raw=true)
+
+
+
+![App Screenshot](https://github.com/TusharMachhi/netflix/blob/master/backend/src/screenshots/signupform.png?raw=true)
+
+
 ![App Screenshot](https://github.com/TusharMachhi/netflix/blob/master/backend/src/screenshots/groothomepage.png?raw=true)
 
 
